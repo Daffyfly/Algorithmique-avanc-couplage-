@@ -1,4 +1,6 @@
 #include <iostream>
+#include "./include/grapheBiparti.h"
+#include "./include/sommet.h"
 
 using namespace std;
 
