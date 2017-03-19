@@ -6,6 +6,7 @@
 #include <boost/numeric/ublas/io.hpp>
 #include <vector>
 #include <random>
+#include <queue>
 
 using namespace boost::numeric::ublas;
 using namespace std;
@@ -29,15 +30,24 @@ class GrapheBiparti
 
 private:
 	double d_rand();
+	std::vector<int> Pair_U;
+	std::vector<int> Pair_V;
+	std::vector<int> Dist;
 public:
 	GrapheBiparti(){};
 	matrix<int> m_verticles;
 	std::vector<int> s_n1;
 	std::vector<int> t_n2;
 	int n1,n2; //n1: row n2: column
+	int NIL;
+	
 	GrapheBiparti(int n1,int n2);
 	void generate(double p);
 	void print_m(){ cout << m_verticles << endl;}
+
+	int HopcroftKarp();
+	bool bfs();
+	bool dfs(int u);
 
 	~GrapheBiparti(){};
 	

@@ -8,10 +8,10 @@ using namespace std;
 
 
 int main(int argc, char const *argv[])
-{
-	GrapheBiparti g1(3,4);
-	g1.generate(0.5);
-	g1.print_m();
+{	
+	GrapheBiparti g1(1000,1000);	
+	g1.generate(0.005);
+	cout<<g1.HopcroftKarp()<<endl;
 
 
 	return 0;
