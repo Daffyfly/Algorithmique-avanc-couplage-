@@ -36,6 +36,8 @@ $(EXE_NAME): $(LINKOBJ)
 %.o: %.cpp %.h
 	$(COMPILER) -g -c $< -o $@ $(INC_PATHS) $(FLAGS)
 
+%.o: %.cpp
+	$(COMPILER) -g -c $< -o $@ $(INC_PATHS) $(FLAGS)
 # cleanup
 clean:
 	rm -f $(LINKOBJ)
