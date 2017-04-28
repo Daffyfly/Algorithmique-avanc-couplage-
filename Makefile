@@ -14,12 +14,12 @@ COMPILER = g++
 LINKER =g++
 
 #options for linker and compiler
-FLAGS =-g -ansi -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -D_DEBUG_ -std=c++11
+FLAGS =-g -ansi -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -D_DEBUG_ -std=c++11 -lemon
 
 EXE_NAME= couplage.exe
 
 #can have several ones separated by spaces, only cpp files
-SOURCES = main.cpp ./include/grapheBiparti.cpp ./include/sommet.cpp
+SOURCES = main2.cpp ./include/grapheClassique.cpp
 
 #PATH to extra header used in the project (when using libs not installed in the OS)
 INC_PATHS= -I

@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1632472918/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1632472918.dir/build.make CMakeFiles/cmTryCompileExec1632472918.dir/build
+make[1]: entrant dans le répertoire « /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1632472918.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1632472918.dir/CheckSymbolExists.c.o   -c /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1632472918
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1632472918.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1632472918.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1632472918 -rdynamic 
+CMakeFiles/cmTryCompileExec1632472918.dir/CheckSymbolExists.c.o : Dans la fonction « main » :
+CheckSymbolExists.c:(.text+0x16) : référence indéfinie vers « pthread_create »
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1632472918] Erreur 1
+make[1]: quittant le répertoire « /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp »
+make: *** [cmTryCompileExec1632472918/fast] Erreur 2
+
+File /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4025883189/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4025883189.dir/build.make CMakeFiles/cmTryCompileExec4025883189.dir/build
+make[1]: entrant dans le répertoire « /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp »
+/usr/bin/cmake -E cmake_progress_report /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4025883189.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec4025883189.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4025883189
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4025883189.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec4025883189.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4025883189 -rdynamic -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec4025883189] Erreur 1
+make[1]: quittant le répertoire « /home/vincent/si4/Algo/lemon-1.3.1/build/CMakeFiles/CMakeTmp »
+make: *** [cmTryCompileExec4025883189/fast] Erreur 2
+
+
