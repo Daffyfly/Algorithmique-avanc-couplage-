@@ -11,29 +11,35 @@ int main(int argc, char const *argv[])
 {	
 
 
-	ofstream result("result.txt", ios::out | ios::trunc);  //déclaration du flux et ouverture du fichier
+	ofstream result("value.txt", ios::app);  //déclaration du flux et ouverture du fichier
+	ofstream tabproba("tabproba.txt",ios::app);
 
         
 
-	if(result)
+	if(result && tabproba)
 	{
-		double p=0.001;
-
-		while(p<0.06){
-			result<<"p=";
+		result<<endl;
+		tabproba<<endl;
+		double p=0.011;
+		result << "c(";
+		tabproba << "c(";
+		while(p<0.026){
 			result<< p ;
-			result<<":"<<endl;
-			for (int i = 0; i < 100; ++i) //on fait 1000 tests par valeur
+			result<<",";
+			int tmp = 0;
+			for (int i = 0; i < 1000; ++i) //on fait 1000 tests par valeur
 			{
 				GrapheBiparti g1(500,500);
 				g1.generate(p);
-				result<<g1.HopcroftKarp()<<endl;
+				if(g1.HopcroftKarp()==500)
+					tmp++;
 			}
+			tabproba<<tmp<<",";
 
-			p+=0.005;
+			p+=0.002;
 			cout << p << endl; //pour savoir où j'en suis
 		}
-
+		tabproba.close();
 		result.close();  // on referme le fichier
 	}
 	else
