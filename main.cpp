@@ -20,10 +20,10 @@ int main(int argc, char const *argv[])
 	{
 		result<<endl;
 		tabproba<<endl;
-		double p=0.011;
+		double p=0.004;
 		result << "c(";
 		tabproba << "c(";
-		while(p<0.026){
+		while(p<0.0013){
 			result<< p ;
 			result<<",";
 			int tmp = 0;
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 			}
 			tabproba<<tmp<<",";
 
-			p+=0.002;
+			p+=0.0009;
 			cout << p << endl; //pour savoir où j'en suis
 		}
 		tabproba.close();

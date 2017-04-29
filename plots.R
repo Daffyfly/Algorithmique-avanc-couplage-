@@ -10,11 +10,25 @@ values = c(0,0,2,66,93,100,100,100,100,100,100,100)
 probs = c(0.019,0.0196,0.0202,0.0208,0.0214,0.022,0.0226,0.0232,0.0238,0.0244,0.025)
 values = c(95,94,100,99,99,100,99,99,98,98,100)
 
+probs = c(0.01,0.06,0.11,0.16,0.21,0.26,0.31,0.36,0.41,0.46,0.51,0.56,0.61,0.66,0.71,0.76,0.81,0.86,0.91)
+values = c(96,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100)
+  
+probs = c(0.001,0.006,0.011,0.016,0.021,0.026,0.031,0.036,0.041,0.046,0.051,0.056)
+values = c(0,8,98,100,100,100,100,100,100,100,100,100)
 
-jpeg("/home/vincent/si4/Algo/Algorithmique-avanc-couplage-/p4.jpg", height=600, width = 900)
+probs =  c(0.001,0.0025,0.004,0.0055,0.007,0.0085,0.01,0.0115,0.013,0.0145,0.016)
+values = c(0,0,0,1,42,82,95,99,100,100,100)
+
+probs = c(0.0055,0.00625,0.007,0.00775,0.0085,0.00925,0.01,0.01075,0.0115,0.01225)
+values = c(3,11,48,78,88,97,98,99,99,100)
+
+probs = c(0.01,0.0103,0.0106,0.0109,0.0112,0.0115,0.0118,0.0121,0.0124,0.0127)
+values = c(96,97,97,98,98,98,100,99,99,99)
+
+jpeg("/home/vincent/si4/Algo/Algorithmique-avanc-couplage-/pclassique5.jpg", height=600, width = 900)
 barplot(values,  
         panel.first=abline(h=pretty(values),col="lightgrey",lty=2),
-        main="Nombre de couplages parfaits selon la probabilité d'avoir un couple de 0.019 à 0.025 avec pas de 0.0006 sur 100 essais",
+        main="Nombre de couplages parfaits selon la probabilité d'avoir un couple de 0.01 à 0.0127 avec pas de 0.0003 sur 1000 essais",
         xlab="Probabilité",ylab="Nombres de couplages parfaits", 
         names.arg=probs)
 dev.off()
